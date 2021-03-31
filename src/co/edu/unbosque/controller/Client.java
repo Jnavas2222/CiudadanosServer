@@ -15,9 +15,9 @@ public class Client {
             var input = new Scanner(socket.getInputStream());
             var output = new PrintWriter(socket.getOutputStream(), true);
 
-            while(scanner.hasNextLine()) {
-                output.println(scanner.nextLine());
+            while(socket.isConnected()) {
                 System.out.println(input.nextLine());
+                output.println(scanner.nextLine());
             }
         }
 
